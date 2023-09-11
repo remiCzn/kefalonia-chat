@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option go_package = "kefalonia-chat-grpc/protos";
+
+package user;
+
+service Authentication {
+    rpc Register (User) returns (RegisterReply);
+    rpc Login (User) returns (LoginReply);
+    rpc GetUsers (Void) returns (stream UserItem);
+}
+
+message Void {}
+
+message User {
+   string name = 1;
+   string password = 2;
+}
+
+message UserItem {
+    string name = 1;
+}
+
+message RegisterReply {
+    string id = 1;
+}
+
+message LoginReply {
+    string token = 1;
+}

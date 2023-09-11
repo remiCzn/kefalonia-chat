@@ -1,0 +1,4 @@
+**.pb.go
+**_grpc.pb.go
+**.exe
+**/go.sum
